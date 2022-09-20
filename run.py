@@ -48,6 +48,8 @@ def main():
     customer_name()
     size_names()
     pizza_size()
+    type_names()
+    chosen_pizza()
 
 """
 Using art format to print a Welcome Logo
@@ -96,7 +98,7 @@ def size_names():
     """
     Creates a prettytable for user to select pizza sizes and records data on to worksheet
     """
-    print("\nPlease Select the Pizza Size you require?")
+    print("\nRequired Size Option Menu")
     time.sleep(1)  
     size_name = []
     for siz_name in size_list:
@@ -144,5 +146,51 @@ def pizza_size():
             print(Fore.RED + "Please type 1, 2, 3 or 4" + Style.RESET_ALL)
             continue
         return pizza_size
+
+def type_names():
+    """
+    The user is displayed options of the type of Pizza Crust they would like to select
+    """
+    print("\nRequired Pan / Crust Option Menu")
+    time.sleep(1) 
+    type_name = []
+    for tpe_name in type_list:
+        type_name.append(tpe_name)
+    num = []
+    for i in range(1, 4):
+        num.append(i)
+
+    type_names.names = dict(zip(num, type_name))
+
+    type_table = PrettyTable()
+    type_table.field_names = num
+    type_table.add_row(type_name)
+    print(type_table)
+    return type_name
+"""
+The user will be displayed with option to select the desired pizza crust
+"""
+def chosen_pizza():
+    while True:
+        pizza_chosen = input(Fore.BLUE + "\nPlease select the type of Pan you require your pizza to be cooked in?  \n" + Style.RESET_ALL).lower()
+        if pizza_chosen == "1":
+            customer_details.append("Deep Pan")
+            print("\nDeep Pan, our deep pan are Gluten Free\n")
+            break
+            
+        if pizza_chosen == "2":
+            customer_details.append("Thin Crust")
+            print("\nThin Crust, our Thin Crust are made from healthy dough\n")
+            break
+            
+        if pizza_chosen == "3":
+            customer_details.append("Cheese Crust")
+            print("\nCheese Crust, Delicious cheesy dough\n")
+            break
+
+        else:
+            print(Fore.RED +f'\n Must enter a number between 1 to 3')
+            continue
+    return pizza_chosen
    
 main()
