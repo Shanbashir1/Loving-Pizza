@@ -37,6 +37,8 @@ price_list = order_str.col_values(5)[1:]
 Data to be returned to worksheet, with customer order informatio
 """
 customer = SHEET.worksheet('order')
+# Defined variables 
+customer_details = []
 
 """
 Defining the main functions 
@@ -49,10 +51,39 @@ Using art format to print a Welcome Logo
 """
 tprint('Welcome to Loving Pizza', font = 'cybermedium')
 
-   
-   
-   
-   
+"""
+Customer to enter his name and then be prompted by a Welcome message
+The Customer name will be logged into the worksheet (later in the programme)
+The customer will enter his first name
+"""
+def customer_name():
+    while True:
+        try:
+            customer_name.first = input(Fore.BLUE + "\nWelcome to Loving Pizza! Please enter your \
+First Name: " + Style.RESET_ALL).capitalize()
+            if not customer_name.first.isalpha():
+                print(Fore.RED + f"{customer_name.first } is not a valid name. Please enter \
+a valid name" + Style.RESET_ALL)
+            if len(customer_name.first) <= 2 or len(customer_name.first) > 12:
+                print(Fore.RED + f"OOPS, Your name should consist of more than 2 characters. Please Try again." + Style.RESET_ALL)
+                continue
+            customer_name.surname = input(Fore.BLUE + "\nPlease enter your \
+Surname: " + Style.RESET_ALL).capitalize()
+            if not customer_name.first.isalpha():
+                print(Fore.RED + f"{customer_name.first } is not a valid name. Please enter \
+a valid name" + Style.RESET_ALL)
+            elif len(customer_name.surname) <= 2 or len(customer_name.surname) > 12:
+                print(Fore.RED + f"OOPS, Your name should consist of more than 2 characters. Please Try again."  + Style.RESET_ALL)
+                continue
+            else:
+                customer_details.append(customer_name.first)
+                customer_details.append(customer_name.surname)
+            
+        except IndexError:
+            print(f"\nWelcome to Loving Pizza {customer_name.first}, {customer_name.surname} ")
+        break
+    return customer_name.first, customer_name.surname
+
    
    
    
