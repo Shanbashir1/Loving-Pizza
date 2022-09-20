@@ -52,6 +52,8 @@ def main():
     chosen_pizza()
     pizza_names()
     pizza_package()
+    pizza_toppings()
+    topping_package()
 
 """
 Using art format to print a Welcome Logo
@@ -91,15 +93,8 @@ a valid name" + Style.RESET_ALL)
         break
     return customer_name.first, customer_name.surname
 
-"""
-Options for the user to select the size of pizza they require
-The Price is listed and displayed for the user 
-"""
 
 def size_names():
-    """
-    Creates a prettytable for user to select pizza sizes and records data on to worksheet
-    """
     print("\nPizza Size Option Menu")
     time.sleep(1)  
     size_name = []
@@ -218,6 +213,10 @@ def pizza_names():
     return pizza_name
 
 def pizza_package():
+    """
+    The user will be prompted to select the desired pizza
+    """
+
     while True:
         pizza_package = input(Fore.BLUE + "\nPlease select the pizza you require, by entering the number?  \n" + Style.RESET_ALL).lower()
         if pizza_package == "1":
@@ -259,6 +258,61 @@ def pizza_package():
         else:
             print(Fore.RED +f'\n Must enter a number between 1 to 9')
             continue
+def pizza_toppings():
+    """
+    The user is displayed with options of selecting additional toppings
+    Only 1 topping is allowed with each order.   
+    """
+    print("\nPlease select if you require any additional toppings?")
+    time.sleep(1)
+    pizza_topping = []
+    for top_name in topping_list:
+       pizza_topping.append(top_name)
+    num = []
+    for i in range(1, 7):
+        num.append(i)
 
+    pizza_toppings.names = dict(zip(num, pizza_topping))
+
+    topping_table = PrettyTable()
+    topping_table.field_names = num
+    topping_table.add_row(pizza_topping)
+    print(topping_table)
+    return pizza_topping        
+
+def topping_package():
+    """
+    The user will be prompted to select the additional toppings
+    """
+    while True:
+        topping_package = input(Fore.BLUE + "\nPlease select the toppings you require, by entering the number?  \n" + Style.RESET_ALL).lower()
+        if topping_package == "1":
+            customer_details.append("Pineapple")
+            print("\nGreat choice, you chose Pineapple\n")
+            break
+        if topping_package == "2":
+            customer_details.append("Sweetcorn")
+            print("\nGreat choice, you chose Sweetcorn\n")
+            break
+        if topping_package == "3":
+            customer_details.append("Onions")
+            print("\nGreat choice, you chose Onions\n")
+            break
+        if topping_package == "4":
+            customer_details.append("Cheese")
+            print("\nGreat choice, you chose Cheese\n")
+            break
+        if topping_package == "5":
+            customer_details.append("Chicken")
+            print("\nGreat choice, you chose Chicken\n")
+            break
+        if topping_package == "6":
+            customer_details.append("None")
+            print(Fore.CYAN +f"\nOk, so you have selected None additional toppings\n" + Style.RESET_ALL).lower()
+            break       
+
+        else:
+            print(Fore.RED +f'\n Must enter a number between 1 to 6')
+            continue
    
 main()
