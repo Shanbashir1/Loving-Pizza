@@ -50,6 +50,8 @@ def main():
     pizza_size()
     type_names()
     chosen_pizza()
+    pizza_names()
+    pizza_package()
 
 """
 Using art format to print a Welcome Logo
@@ -98,7 +100,7 @@ def size_names():
     """
     Creates a prettytable for user to select pizza sizes and records data on to worksheet
     """
-    print("\nRequired Size Option Menu")
+    print("\nPizza Size Option Menu")
     time.sleep(1)  
     size_name = []
     for siz_name in size_list:
@@ -151,7 +153,7 @@ def type_names():
     """
     The user is displayed options of the type of Pizza Crust they would like to select
     """
-    print("\nRequired Pan / Crust Option Menu")
+    print("\nPizza Pan Option Menu\n")
     time.sleep(1) 
     type_name = []
     for tpe_name in type_list:
@@ -192,5 +194,71 @@ def chosen_pizza():
             print(Fore.RED +f'\n Must enter a number between 1 to 3')
             continue
     return pizza_chosen
+
+def pizza_names():
+    """
+    Option displays a list of pizza selected from the worksheet 
+    User is displayed with a selection of pizza names
+    """
+    print("\nRequired Pizza Option Menu\n")
+    time.sleep(1) 
+    pizza_name = []
+    for pza_name in pizza_list:
+        pizza_name.append(pza_name)
+    num = []
+    for i in range(1, 10):
+        num.append(i)
+
+    pizza_names.names = dict(zip(num, pizza_name))
+
+    pizza_table = PrettyTable()
+    pizza_table.field_names = num
+    pizza_table.add_row(pizza_name)
+    print(pizza_table)
+    return pizza_name
+
+def pizza_package():
+    while True:
+        pizza_package = input(Fore.BLUE + "\nPlease select the pizza you require, by entering the number?  \n" + Style.RESET_ALL).lower()
+        if pizza_package == "1":
+            customer_details.append("Margherita")
+            print("\The pizza you chose: Margherita\n")
+            break
+        if pizza_package == "2":
+            customer_details.append("Vegitarian Supreme")
+            print("\nThe pizza you chose: Vegitarian Supreme\n")
+            break
+        if pizza_package == "3":
+            customer_details.append("Tandoori Lover")
+            print("\nThe pizza you chose: Tandoori Lover\n")
+            break
+        if pizza_package == "4":
+            customer_details.append("The Mediterranean")
+            print("\nThe pizza you chose: The Mediterranean\n")
+            break
+        if pizza_package == "5":
+            customer_details.append("Cheese Lover")
+            print("\nThe pizza you chose: Cheese Lover\n")
+            break
+        if pizza_package == "6":
+            customer_details.append("Vegi Hot")
+            print("\nThe pizza you chose: Vegi Hot\n")
+            break
+        if pizza_package == "7":
+            customer_details.append("SeaFood Lover")
+            print("\nThe pizza you chose: SeaFood Lover\n")
+            break
+        if pizza_package == "8":
+            customer_details.append("Halal Lover")
+            print("\nThe pizza you chose: Halal Lover\n")
+            break
+        if pizza_package == "9":
+            customer_details.append("California delight")
+            print("\nThe pizza you chose: California delight\n")
+            break
+        else:
+            print(Fore.RED +f'\n Must enter a number between 1 to 9')
+            continue
+
    
 main()
