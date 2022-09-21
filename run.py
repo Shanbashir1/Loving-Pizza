@@ -1,6 +1,6 @@
+from numpy import random
+from datetime import date, time, datetime
 import time
-import random
-from datetime import date, datetime
 import gspread
 from google.oauth2.service_account import Credentials
 from decimal import *
@@ -13,7 +13,8 @@ API's worksheets  - Python code linked to google worksheet
 The data will collect the Pizza type, sizes, name and any additional toppings. 
 The information will also return customer order details, once a reciept has been created. 
 """
-
+# This method was used in conjuction with the Love Sandwich project, the template has been used.
+# Information will be in my credit section of the Readme.  
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -34,15 +35,20 @@ pizza_list = order_str.col_values(2)[1:]
 price_list = order_str.col_values(5)[1:]  
 
 """
-Data to be returned to worksheet, with customer order informatio
+Data to be returned to worksheet, with customer order information
 """
-customer = SHEET.worksheet('order')
+order = SHEET.worksheet('order')
+
 # Defined variables 
 customer_details = []
 prices = []
+random = random.randint(100)
+today = date.today()
+now = datetime.now()
+dt_string = now.strftime("%H:%M:%S")
 
 """
-Defining the main functions 
+Defining the main functions and then using the main function to instruct the user what instructions are required. 
 """
 def main():
     customer_name()
@@ -54,6 +60,10 @@ def main():
     pizza_package()
     pizza_toppings()
     topping_package()
+    pizza_cost()
+    calculate_price()
+    print_receipt()
+    start_over()
 
 """
 Using art format to print a Welcome Logo
@@ -221,7 +231,7 @@ def pizza_package():
         pizza_package = input(Fore.BLUE + "\nPlease select the pizza you require, by entering the number?  \n" + Style.RESET_ALL).lower()
         if pizza_package == "1":
             customer_details.append("Margherita")
-            print("\The pizza you chose: Margherita\n")
+            print("\nThe pizza you chose: Margherita\n")
             break
         if pizza_package == "2":
             customer_details.append("Vegitarian Supreme")
@@ -288,31 +298,87 @@ def topping_package():
         topping_package = input(Fore.BLUE + "\nPlease select the toppings you require, by entering the number?  \n" + Style.RESET_ALL).lower()
         if topping_package == "1":
             customer_details.append("Pineapple")
-            print("\nGreat choice, you chose Pineapple\n")
+            print("\nAdditional Toppings added: Pineapple\n")
             break
         if topping_package == "2":
             customer_details.append("Sweetcorn")
-            print("\nGreat choice, you chose Sweetcorn\n")
+            print("\nAdditional Toppings added: Sweetcorn\n")
             break
         if topping_package == "3":
             customer_details.append("Onions")
-            print("\nGreat choice, you chose Onions\n")
+            print("\nAdditional Toppings added: Onions\n")
             break
         if topping_package == "4":
             customer_details.append("Cheese")
-            print("\nGreat choice, you chose Cheese\n")
+            print("\nAdditional Toppings added: Cheese\n")
             break
         if topping_package == "5":
             customer_details.append("Chicken")
-            print("\nGreat choice, you chose Chicken\n")
+            print("\nAdditional Toppings added: Chicken\n")
             break
         if topping_package == "6":
             customer_details.append("None")
-            print(Fore.CYAN +f"\nOk, so you have selected None additional toppings\n" + Style.RESET_ALL).lower()
+            print(Fore.GREEN + "\nYou selected to have no additional toppings  \n" + Style.RESET_ALL)
             break       
 
         else:
             print(Fore.RED +f'\n Must enter a number between 1 to 6')
             continue
+def pizza_cost():
+    """
+    Methods show cost using the costs from the size function. 
+    """
+    for cost in prices:
+        return float(round(cost, 2))
+
+def calculate_price():
+    print("\nHang on... were calculating your price...")
+    time.sleep(2)
+    customer_details.append(pizza_cost())
+
+    print(f"\nThe Price of your Pizza is £{pizza_cost()}")
+
+def print_receipt():
+    """
+    The print reciept option will create a receipt using the values and data from the worksheet. 
+    The receipt will return information/values back to the worksheet logging in customer orders. 
+    """
+    order_all_value = order.get_all_values()
    
+
+    receipt_table = PrettyTable()
+    print("\nPrinting Receipt\n")
+    time.sleep(2)
+    tprint(' Loving Pizza', font = 'cybermedium')
+    receipt_table.field_names = (["Loving Pizza"])
+
+    # A random receipt number is created and displayed onto the print receipt 
+    receipt_table.add_row([f"\nReceipt Number: {random}"])
+    # The Below will produce a receipt using the information on the worksheet 
+    receipt_table.add_row([f"\nDate: {today}"])
+    receipt_table.add_row([f"\nTime: {dt_string}"])
+    receipt_table.add_row([f"\nCustomer Name: {customer_name.first} {customer_name.surname}"])
+    receipt_table.add_row(["\n------- Your Order Confirmation --------"])
+    receipt_table.add_row([f"\nSize: {customer_details[2].upper()}"])
+    receipt_table.add_row([f"\nPizza: {customer_details[4].upper()}"])
+    receipt_table.add_row([f"\nType: {customer_details[3].upper()}"])
+    receipt_table.add_row([f"\nTopping: {customer_details[5].upper()}"])
+    receipt_table.add_row([f"\nPrice: £{customer_details[6]}"])
+    receipt_table.add_row([f"\n\nThank you for ordering with Loving Pizza {customer_name.first} {customer_name.surname}.\
+ \nYour order is on its way to you."])
+    print(receipt_table)
+    
+    # Deatils of the customer order to be transferred back to the worksheet. 
+    customer_details.append(str(today)) 
+    customer_details.append(dt_string)
+    customer_details.append(random)
+    order.append_row(customer_details)
+
+"""
+Ending the ordering process, the user would need to re-enter the ordering process if re-ordering
+"""
+def start_over():
+        time.sleep(3)
+        print('Exiting... Thank for Ordering with Loving Pizza, Hope to see you back soon.')
+          
 main()
