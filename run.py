@@ -124,18 +124,18 @@ a valid name" + Style.RESET_ALL)
             else:
                 customer_data.append(customer_name.first)
                 customer_data.append(customer_name.surname)
-                customer_data.append(customer_name.house) 
-                customer_data.append(customer_name.address) 
+                customer_data.append(customer_name.house)
+                customer_data.append(customer_name.address)
                 customer_data.append(customer_name.postcode)
-            
+
         except IndexError:
             print(f"\nWelcome to Loving Pizza {customer_name.first}, {customer_name.surname} ")
         break
     return customer_name.first, customer_name.surname, customer_name.house, customer_name.address, customer_name.postcode
-        
+
 
 def size_names():
-    time.sleep(1)  
+    time.sleep(1)
     size_name = []
     for siz_name in size_list:
         size_name.append(siz_name)
@@ -154,7 +154,7 @@ def size_names():
 
 def pizza_size():
     """
-    Prompts user to select options from previous function relating to pizza size. 
+    Prompts user to select options from previous function relating to pizza size.
     The user is then displayed with their choice
     """
     while True:
@@ -189,7 +189,7 @@ def type_names():
     """
     The user is displayed options of the type of Pizza Crust they would like to select
     """
-    time.sleep(1) 
+    time.sleep(1)
     type_name = []
     for tpe_name in type_list:
         type_name.append(tpe_name)
@@ -216,12 +216,12 @@ def chosen_pizza():
             customer_data.append("Deep Pan")
             print("\nDeep Pan, our deep pan are Gluten Free\n")
             break
-            
+
         if pizza_chosen == "2":
             customer_data.append("Thin Crust")
             print("\nThin Crust, our Thin Crust are made from healthy dough\n")
             break
-            
+
         if pizza_chosen == "3":
             customer_data.append("Cheese Crust")
             print("\nCheese Crust, Delicious cheesy dough\n")
@@ -234,10 +234,10 @@ def chosen_pizza():
 
 def pizza_names():
     """
-    Option displays a list of pizza selected from the worksheet 
+    Option displays a list of pizza selected from the worksheet
     User is displayed with a selection of pizza names
     """
-    time.sleep(1) 
+    time.sleep(1)
     pizza_name = []
     for pza_name in pizza_list:
         pizza_name.append(pza_name)
@@ -302,12 +302,12 @@ def pizza_package():
 def pizza_toppings():
     """
     The user is displayed with options of selecting additional toppings
-    Only 1 topping is allowed with each order.   
+    Only 1 topping is allowed with each order.
     """
     time.sleep(1)
     pizza_topping = []
     for top_name in topping_list:
-       pizza_topping.append(top_name)
+        pizza_topping.append(top_name)
     num = []
     for i in range(1, 7):
         num.append(i)
@@ -412,4 +412,5 @@ def start_over():
     time.sleep(3)
     print(Fore.GREEN + f'Exiting... Thank for Ordering with Loving Pizza, Hope to see you back soon.' + Style.RESET_ALL)
           
-main() 
+if __name__ == '__main__':
+  main()
