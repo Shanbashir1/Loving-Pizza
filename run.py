@@ -3,11 +3,9 @@ from datetime import date, time, datetime
 import time
 import gspread
 from google.oauth2.service_account import Credentials
-from decimal import *
 from art import tprint
 from prettytable import PrettyTable
 from colorama import Fore, Style
-from tabulate import tabulate
 
 """
 API's worksheets  - Python code linked to google worksheet
@@ -41,7 +39,7 @@ Data to be returned to worksheet, with customer order information
 """
 order = SHEET.worksheet('order')
 
-# Defined variables
+# Defined variables to be used throughtout the program
 customer_data = []
 prices = []
 random = random.randint(1000)
@@ -50,11 +48,11 @@ now = datetime.now()
 dt_string = now.strftime("%H:%M:%S")
 
 
-
 def main():
     """
     Defining the main functions and then using the main function to
-    instruct the user what instructions are required.
+    instruct the user what instructions are required and in
+    what order.
     """
     customer_name()
     size_names()
@@ -92,8 +90,8 @@ First Name: " + Style.RESET_ALL).capitalize()
                 print(Fore.RED + f"{customer_name.first } is not a valid name. Please enter \
 a valid name" + Style.RESET_ALL)
             if len(customer_name.first) <= 2 or len(customer_name.first) > 12:
-                print(Fore.RED + f"OOPS, Your name should consist of more than 2 characters.\
-                     Please Try again." + Style.RESET_ALL)
+                print(Fore.RED + ("OOPS, Your name should consist of more than"
+                      "2 characters. Please Try again.") + Style.RESET_ALL)
                 continue
 
             customer_name.surname = input(Fore.BLUE + "\nPlease enter your \
@@ -101,17 +99,21 @@ Surname: " + Style.RESET_ALL).capitalize()
             if not customer_name.first.isalpha():
                 print(Fore.RED + f"{customer_name.first } is not a valid name. Please enter \
 a valid name" + Style.RESET_ALL)
-            elif len(customer_name.surname) <= 2 or len(customer_name.surname) > 12:
+            elif (len(customer_name.surname) <= 2 or
+                  len(customer_name.surname) > 12):
                 print(Fore.RED + f"OOPS, Your name should consist of more than 2 characters.\
-                     Please Try again."  + Style.RESET_ALL)
+Please Try again." + Style.RESET_ALL)
                 continue
 
-            customer_name.house = input(Fore.BLUE + "\nPlease enter your House Number: " + Style.RESET_ALL).capitalize()
-            customer_name.address = input(Fore.BLUE + "\nPlease enter your Address: " + Style.RESET_ALL).capitalize()
-            customer_name.postcode = input(Fore.BLUE + "\nPlease enter your Postcode: " + Style.RESET_ALL).capitalize()
+            customer_name.house = input(Fore.BLUE + "\nPlease enter your House \
+Number: " + Style.RESET_ALL).capitalize()
+            customer_name.address = input(Fore.BLUE + "\nPlease enter your \
+Address: " + Style.RESET_ALL).capitalize()
+            customer_name.postcode = input(Fore.BLUE + "\nPlease enter your \
+Postcode: " + Style.RESET_ALL).capitalize()
             if not customer_name.house:
                 print(Fore.RED + f"You must enter a valid house number.\
-                     Please Try again." + Style.RESET_ALL)
+Please Try again." + Style.RESET_ALL)
                 continue
             if not customer_name.address:
                 print(Fore.RED + f"You must enter a valid address.\
@@ -129,12 +131,19 @@ a valid name" + Style.RESET_ALL)
                 customer_data.append(customer_name.postcode)
 
         except IndexError:
-            print(f"\nWelcome to Loving Pizza {customer_name.first}, {customer_name.surname} ")
+                        print(f"\nWelcome to Loving Pizza {customer_name.first}, \
+{customer_name.surname} ")
         break
-    return customer_name.first, customer_name.surname, customer_name.house, customer_name.address, customer_name.postcode
+    return customer_name.first, customer_name.surname, customer_name.house, \
+        customer_name.address, customer_name.postcode
 
 
 def size_names():
+    """
+    The user to be displayed 1 to 4 sizes of pizza
+    The display will be in a table format
+    User prompted to select 1 pizza size
+    """
     time.sleep(1)
     size_name = []
     for siz_name in size_list:
@@ -152,10 +161,14 @@ def size_names():
     print(size_table)
     return size_name
 
+
 def pizza_size():
     """
-    Prompts user to select options from previous function relating to pizza size.
+    Prompts user to select options from previous function
+    relating to pizza size.
     The user is then displayed with their choice
+    The price function will be appended to worksheet
+    and calculated in the calculate price function.
     """
     while True:
         pizza_size.piz = input(Fore.BLUE + "\nPlease select the size of the Pizza you require? \
@@ -185,9 +198,11 @@ def pizza_size():
             continue
         return pizza_size
 
+
 def type_names():
     """
-    The user is displayed options of the type of Pizza Crust they would like to select
+    The user is displayed options of the type of Pizza Crust
+    they would like to select.
     """
     time.sleep(1)
     type_name = []
@@ -206,12 +221,14 @@ def type_names():
     print(type_table)
     return type_name
 
+
 def chosen_pizza():
     """
     The user will be displayed with option to select the desired pizza crust
     """
     while True:
-        pizza_chosen = input(Fore.BLUE + "\nPlease select the type of Pan you require your pizza to be cooked in?  \n" + Style.RESET_ALL).lower()
+        pizza_chosen = input(Fore.BLUE + "\nPlease select the type of Pan you \
+require your pizza to be cooked in?  \n" + Style.RESET_ALL).lower()
         if pizza_chosen == "1":
             customer_data.append("Deep Pan")
             print("\nDeep Pan, our deep pan are Gluten Free\n")
@@ -228,14 +245,16 @@ def chosen_pizza():
             break
 
         else:
-            print(Fore.RED +f'\n Must enter a number between 1 to 3')
+            print(Fore.RED + f'\n Must enter a number between 1 to 3')
             continue
     return pizza_chosen
+
 
 def pizza_names():
     """
     Option displays a list of pizza selected from the worksheet
     User is displayed with a selection of pizza names
+    format will be displayed in a table.
     """
     time.sleep(1)
     pizza_name = []
@@ -254,12 +273,17 @@ def pizza_names():
     print(pizza_table)
     return pizza_name
 
+
 def pizza_package():
     """
     The user will be prompted to select the desired pizza
+    A Full list of pizzas to choose from will be
+    displayed to the user via prettytable, the user
+    will select 1 pizza.
     """
     while True:
-        pizza_package = input(Fore.BLUE + "\nPlease select the pizza you require, by entering the number?  \n" + Style.RESET_ALL).lower()
+        pizza_package = input(Fore.BLUE + "\nPlease select the pizza you \
+require, by entering the number?  \n" + Style.RESET_ALL).lower()
         if pizza_package == "1":
             customer_data.append("Margherita")
             print("\nThe pizza you chose: Margherita\n")
@@ -297,12 +321,15 @@ def pizza_package():
             print("\nThe pizza you chose: California delight\n")
             break
         else:
-            print(Fore.RED +f'\n Must enter a number between 1 to 9')
+            print(Fore.RED + f'\n Must enter a number between 1 to 9')
             continue
+
+
 def pizza_toppings():
     """
     The user is displayed with options of selecting additional toppings
     Only 1 topping is allowed with each order.
+    No additional cost is applied for this option
     """
     time.sleep(1)
     pizza_topping = []
@@ -319,18 +346,22 @@ def pizza_toppings():
     topping_table.field_names = num
     topping_table.add_row(pizza_topping)
     print(topping_table)
-    return pizza_topping        
+    return pizza_topping
+
 
 def topping_package():
     """
-    The user will be prompted to select the additional toppings
+    The user will be prompted to select the additional toppings.
+    User to have 6 options from the table above to select
+    its required topping.
     """
     while True:
-        topping_package = input(Fore.BLUE + "\nPlease select the toppings you require, by entering the number?  \n" + Style.RESET_ALL).lower()
+        topping_package = input(Fore.BLUE + "\nPlease select the toppings you \
+require, by entering the number?  \n" + Style.RESET_ALL).lower()
         additional_toppings = None
         if topping_package == "1":
             additional_toppings = "Pineapple"
-            
+
         elif topping_package == "2":
             additional_toppings = "Sweetcorn"
 
@@ -345,38 +376,46 @@ def topping_package():
 
         if topping_package == "6":
             customer_data.append("None")
-            print(Fore.GREEN + "\nYou selected to have no additional toppings  \n" + Style.RESET_ALL)
-            break  
-        
+            print(Fore.GREEN + "\nYou selected to have no additional \
+toppings  \n" + Style.RESET_ALL)
+            break
         elif topping_package:
             customer_data.append(additional_toppings)
             print("\nAdditional Toppings Added: \n" + additional_toppings)
             break
 
         else:
-            print(Fore.RED +f'\n Must enter a number between 1 to 6')
+            print(Fore.RED + f'\n Must enter a number between 1 to 6')
             continue
+
+
 def pizza_cost():
     """
-    Methods show cost using the costs from the size function. 
+    Method to show price using the costs from the size function.
     """
     for cost in prices:
         return float(round(cost, 3))
 
+
 def calculate_price():
+    """
+    Calculates prices using the cost from Pizza sizes.
+    """
     print("\nHang on... while we calculate your price...")
     time.sleep(2)
     customer_data.append(pizza_cost())
 
     print(f"\nThe Price of your Pizza is £{pizza_cost()}")
 
+
 def print_receipt():
     """
-    The print reciept option will create a receipt using the values and data from the worksheet. 
-    The receipt will return information/values back to the worksheet logging in customer orders. 
+    The print reciept option will create a receipt using the
+    values and data from the worksheet.
+    The receipt will return information/values back to the worksheet
+    logging in customer orders.
     """
     order_all_value = order.get_all_values()
-   
 
     printing_table = PrettyTable()
     print("\nPrinting Receipt\n")
@@ -384,22 +423,28 @@ def print_receipt():
     tprint(' Loving Pizza')
     printing_table.field_names = (["Loving Pizza"])
 
-    # A random receipt number is created and displayed onto the print receipt 
+    # A random receipt number is created and displayed onto the print receipt
     printing_table.add_row([f"\nTransaction Id: {random}"])
-    # The Below will produce a receipt using the information on the worksheet 
+    # The Below will produce a receipt using the information on the worksheet
     printing_table.add_row([f"\nDate: {today}"])
     printing_table.add_row([f"\nTime: {dt_string}"])
-    printing_table.add_row([f"\nCustomer Name: {customer_name.first} {customer_name.surname}"])
-    printing_table.add_row([f"\nDelivery Address:\n {customer_name.house} {customer_name.address} {customer_name.postcode}"])
+    printing_table.add_row([f"\nCustomer Name: {customer_name.first} \
+{customer_name.surname}"])
+    printing_table.add_row([f"\nDelivery Address:\n {customer_name.house} \
+{customer_name.address} {customer_name.postcode}"])
     printing_table.add_row(["\n******* Your Order Confirmation *******"])
-    printing_table.add_row([f"\nOrdered Item: (Size){customer_data[5].upper()}, (Type){customer_data[6].upper()}, (Pizza){customer_data[7].upper()}, (Extra){customer_data[8].upper()}  "])
+    printing_table.add_row([f"\nOrdered Item: (Size) \
+{customer_data[5].upper()}, (Type){customer_data[6].upper()}, \
+(Pizza){customer_data[7].upper()}, (Extra){customer_data[8].upper()}  "])
     printing_table.add_row([f"\nPrice: £{customer_data[9]}"])
-    printing_table.add_row([f"\n\nThank you for ordering with Loving Pizza {customer_name.first} {customer_name.surname}.\
+    printing_table.add_row([f"\n\nThank you for ordering with \
+Loving Pizza {customer_name.first} {customer_name.surname}.\
  \nYour order is on its way to you."])
     print(printing_table)
-    
-    # Deatils of the customer order to be transferred back to the worksheet. 
-    customer_data.append(str(today)) 
+
+    # Detils of the customer order to be transferred back to the worksheet.
+    # Kitchen staff can prepare orders via the information reverted.
+    customer_data.append(str(today))
     customer_data.append(dt_string)
     customer_data.append(random)
     order.append_row(customer_data)
@@ -407,10 +452,12 @@ def print_receipt():
 
 def start_over():
     """
-    Ending the ordering process, the user would need to re-enter the ordering process if re-ordering
+    Ending the ordering process, the user would need to re-enter \
+    the ordering process if re-ordering
     """
     time.sleep(3)
-    print(Fore.GREEN + f'Exiting... Thank for Ordering with Loving Pizza, Hope to see you back soon.' + Style.RESET_ALL)
-          
+    print(Fore.GREEN + f'Exiting... Thank for Ordering with Loving \
+Pizza, Hope to see you back soon.' + Style.RESET_ALL)
+
 if __name__ == '__main__':
-  main()
+    main()
