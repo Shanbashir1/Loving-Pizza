@@ -1,13 +1,13 @@
-# Project 3 - Loving Pizza - A Pizza Ordering System which allows the user to select the type of pizza they require and view a receipt. 
+# Project 3 - Loving Pizza - A Ordering system for a Pizza Shop to its users.
 
 ###  For my third project with Code Institue, I will a create a Pizza ordering system using PYTHON. 
-[View link to my project 3](https://)
+[View link to my project 3](https://loving-pizzas.herokuapp.com/)
 
 ## Introduction
 Loving Pizza is a small family run pizza shop located in the UK, London. 
 The owners who have been operating the pizza shop for some time now, realise that something is missing and that technology play's a big part of the upcoming future. The owners would like the user/customer to order its pizza using its ordering system when visiting the shop or order online via an app. The owners have asked to see a online ordering system and how data will be reverted back to the kitchen staff so they are made aware of what and who has ordered. Ideally I have tried to keep a simple basic system where the pizza shop are made aware of the customer name and address and pizza requirements. The customer is then charged for his pizza. In future the owners could look at a more detailed and advance systems which offers more services and deals. 
 
-<img src="">
+<img src="/readme-images/main.png" alt = "Main Page" style="height: 500px; width: 800px;">
 
 ## User Stories
 + As a first time user I will need to know how and when to answer the prompt request 
@@ -44,12 +44,14 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + The customer name is then repeated in the print order and a thank mesage is also displayed 
 + The customer name feature assures the user of a safe ordering enviroment. 
 + The user is also felt warm and welcoming by having this feature. 
-+ <img src="">
++ <img src="/readme-images/names-option.png" alt = "Enter Name Section" style="height: 500px; width: 600px;">
 
 ### Address
 + The user will be required to enter his/her address in so this information can be recorded to the data worksheet.
 + The address will be used for the Pizza shop to gather information for delivering the Pizza. 
 + The user will be displayed his/her address in the Print order feature. 
++ <img src="/readme-images/address-option.png" alt = "Enter Address Section" style="height: 500px; width: 500px;">
+
 
 ### Pizza Size Option Menu
 + The user is given 4 size options 
@@ -59,33 +61,44 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + The user is asked to select a option using the correct numbers assigned 1,2,3,4.
 + Once the user has selected the size, the output message is displayed, i.e "You selected SMALL, approx 3-4 slices
 + if a value which is not between 1 & 4 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed. 
++ <img src="/readme-images/size-option.png" alt = "Enter Pizza Size" style="height: 500px; width: 600px;">
 
 ### Pizza Pan Option
 + The user is requested to select 3 options to determmine the type of Pan it requires its pizza to be cooked in. 
 + The user will be prompted to select either 1,2,3.
 + Once selected the user will be displayed the following "The pizza you chose: (answer)"
 + if a value which is not between 1 & 3 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed. 
++ <img src="/readme-images/pan-option.png" alt = "Enter Type of Pan" style="height: 500px; width: 600px;">
 
 ### Required Pizza Option Menu 
 + The pizza option menu gives the user a list of pizza they would like to order. 
-+ The pizza are listed between 1 to 9 and the user is requested to select them based on their preference. 
++ The pizza are listed between 1 to 6 and the user is requested to select them based on their preference. 
 + Once selected the user will be displayed the following "The pizza you chose: (answer)"
-+ if a value which is not between 1 & 3 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed.
++ if a value which is not between 1 & 6 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed.
++ <img src="/readme-images/pizza-option.png" alt = "Enter Pizza Type" style="height: 500px; width: 700px;"
 
 ### Additional Toppings 
 + The additional toppings gives the user a list of toppings they would like to add to their order. 
 + The toppings are listed between 1 to 6 and the user is requested to select them based on their preference. 
 + Once selected the user will be displayed the following "Additonal Toppings added: (answer)"
 + if a value which is not between 1 & 6 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed.
++ <img src="/readme-images/topping-option.png" alt = "Enter any additional topping" style="height: 500px; width: 600px;"
 
 ### Calculate Price 
 + The user will be displayed a calculating price, the price will be from the pizza sizes. 
 + The user will be made aware of the pizza cost. 
++ <img src="/readme-images/calculate-option.png" alt = "Calculating Price" style="height: 300px; width: 500px;"
 
 ### Printing Receipt 
 + The user will be in receipt of a order confirmation 
 + Date, Time, Customer Name, address, Pizza details and cost will all be displayed on the receipt
++ A transaction id number is entered randomly with every order, this order can be checked with each order and is a unique feature for the user.
 + A "Thank you" message will be displayed on the receipt. 
++ <img src="/readme-images/receipt-option.png" alt = "Prints receiept" style="height: 500px; width: 500px;"
+
+### Exiting Option 
++ System prints receipt, gives a user a thank you message and exits terminal 
++ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 300px; width: 300px;"
 
 ## Future Features 
 + Login & Register, a option which I was intrested in adapting into my project. However I felt I spent to much time in actually creating the ordering system that I overlooked this facility. Obviously with more time and better organising this facility was a must. The user also gets a secure and better security when ordering. 
