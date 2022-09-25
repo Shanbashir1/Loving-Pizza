@@ -9,6 +9,16 @@ The owners who have been operating the pizza shop for some time now, realise tha
 
 <img src="/readme-images/main.png" alt = "Main Page" style="height: 500px; width: 800px;">
 
+## Design and Planning
++ Initially I was try to plan for a quiz game but I felt as I had done this with Javascript, I had to broaden my skills and my then plan was a ordering system. 
++ At the time of my plan I was actually in receipt of a Pizza menu and so decided I could create a simple ordering system, which allows the user to order a pizza. 
++ My intial design was to start off with a login screen. However I started created a format for data to be transferred from a CSV, just like the Love Sandwich project. 
++ As I continued creating my design on the worksheets, i linked all my data sheets to my program. 
++ In the process I started to code which diverted me off the login design. I had to make alot of changes, the coding did not always give me the outcome i expected, and I had to go searching for answers via tutor support and the internet. 
++ After linking my design I decided to create a chart on Lucida chart to get a overall structure of my project. 
+<img src="/readme-images/lucida.pdf" alt = "Lucida Chart" style="height: 500px; width: 700px;">
+
+ 
 ## User Stories
 + As a first time user I will need to know how and when to answer the prompt request 
 + As a user I would need know what options I have for ordering, i.e Pizza Type, Pizza, Additonal Toppings, etc 
@@ -55,7 +65,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + The user will be required to enter his/her address in so this information can be recorded to the data worksheet.
 + The address will be used for the Pizza shop to gather information for delivering the Pizza. 
 + The user will be displayed his/her address in the Print order feature. 
-+ <img src="/readme-images/address-option.png" alt = "Enter Address Section" style="height: 500px; width: 500px;">
++ <img src="/readme-images/address-option.png" alt = "Enter Address Section" style="height: 300px; width: 600px;">
 
 
 ### Pizza Size Option Menu
@@ -87,12 +97,12 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + The toppings are listed between 1 to 6 and the user is requested to select them based on their preference. 
 + Once selected the user will be displayed the following "Additonal Toppings added: (answer)"
 + if a value which is not between 1 & 6 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed.
-+ <img src="/readme-images/topping-option.png" alt = "Enter any additional topping" style="height: 500px; width: 700px;">
++ <img src="/readme-images/topping.option.png" alt = "Enter any additional topping" style="height: 500px; width: 700px;">
 
 ### Calculate Price 
 + The user will be displayed a calculating price, the price will be from the pizza sizes. 
 + The user will be made aware of the pizza cost. 
-+ <img src="/readme-images/calculate-option.png" alt = "Calculating Price" style="height: 500px; width: 700px;">
++ <img src="/readme-images/calculate-option.png" alt = "Calculating Price" style="height: 200px; width: 400px;">
 
 ### Printing Receipt 
 + The user will be in receipt of a order confirmation 
@@ -103,7 +113,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 
 ### Exiting Option 
 + System prints receipt, gives a user a thank you message and exits terminal 
-+ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 400px; width: 700px;">
++ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 200px; width: 400px;">
 
 ## Future Features 
 The project could benefit from a vast ranage of features which could be implemented for future use. I have highlighted some of the proposed features below;
@@ -146,7 +156,7 @@ For my thrid project Python I the following technologies were used to complete m
 
 ## Testing - Python
 + PEP8 online check - A online free aplication which check python code for errors and warnings. 
-+ So with my initial checks I had quite a few errors, mainly the E501 error code, prompting me that the line lenght was too big, I had to do lots of research to determine how I could break down these lines without effecting my code. I managed to find out and used the \ to break down the code. I was discovered I could use () parethesis to wrap the code. 
++ So with my initial checks I had quite a few errors, mainly the E501 error code, prompting me that the line lenght was too big, I had to do lots of research to determine how I could break down these lines without effecting my code. I managed to find out and used the \ to break down the code. I was discovered I could use () parenthesis to wrap the code. 
 + The errors and warning were rectified before deploying my projects  
 + My final online check code returned back with no errors or warnings. 
 <img src="/readme-images/pep_8.png" alt = "Pep8 Online Check" style="height: 600px; width: 800px;">
@@ -154,6 +164,7 @@ For my thrid project Python I the following technologies were used to complete m
 
 ## Test Cases
 1. **Introduction Header to the Loving Pizza** The user starts the program with a "Welcome to Loving Pizza" message, which is displayed using a special art format. 
+
 
 2. **Customer Names** The user is prompted to enter his firstname and then once entered (considering no errors or invalid inputs) the user is prompted to enter his surname, again with the same error message if input entered is invalid 
 3. **Address** The user will be asked to enter his address, 
