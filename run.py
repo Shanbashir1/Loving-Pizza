@@ -91,7 +91,8 @@ First Name: " + Style.RESET_ALL).capitalize()
 a valid name" + Style.RESET_ALL)
             if len(customer_name.first) <= 2 or len(customer_name.first) > 12:
                 print(Fore.RED + ("OOPS, Your name should consist of more than"
-                      "2 characters. Please Try again.") + Style.RESET_ALL)
+                      "2 and no more than 12 characters. \
+Please Try again.") + Style.RESET_ALL)
                 continue
 
             customer_name.surname = input(Fore.BLUE + "\nPlease enter your \
@@ -101,8 +102,9 @@ Surname: " + Style.RESET_ALL).capitalize()
 a valid name" + Style.RESET_ALL)
             elif (len(customer_name.surname) <= 2 or
                   len(customer_name.surname) > 12):
-                print(Fore.RED + f"OOPS, Your name should consist of more than 2 characters.\
-Please Try again." + Style.RESET_ALL)
+                print(Fore.RED + ("OOPS, Your name should consist of more than"
+                      "2 and no more than 12 characters. \
+Please Try again.") + Style.RESET_ALL)
                 continue
 
             customer_name.house = input(Fore.BLUE + "\nPlease enter your House \
@@ -261,7 +263,7 @@ def pizza_names():
     for pza_name in pizza_list:
         pizza_name.append(pza_name)
     num = []
-    for i in range(1, 10):
+    for i in range(1, 7):
         num.append(i)
 
     pizza_names.names = dict(zip(num, pizza_name))
@@ -308,20 +310,9 @@ require, by entering the number?  \n" + Style.RESET_ALL).lower()
             customer_data.append("Vegi Hot")
             print("\nThe pizza you chose: Vegi Hot\n")
             break
-        if pizza_package == "7":
-            customer_data.append("SeaFood Lover")
-            print("\nThe pizza you chose: SeaFood Lover\n")
-            break
-        if pizza_package == "8":
-            customer_data.append("Halal Lover")
-            print("\nThe pizza you chose: Halal Lover\n")
-            break
-        if pizza_package == "9":
-            customer_data.append("California delight")
-            print("\nThe pizza you chose: California delight\n")
-            break
+
         else:
-            print(Fore.RED + f'\n Must enter a number between 1 to 9')
+            print(Fore.RED + f'\n Must enter a number between 1 to 6')
             continue
 
 
@@ -435,7 +426,9 @@ def print_receipt():
     printing_table.add_row(["\n******* Your Order Confirmation *******"])
     printing_table.add_row([f"\nOrdered Item: (Size) \
 {customer_data[5].upper()}, (Type){customer_data[6].upper()}, \
-(Pizza){customer_data[7].upper()}, (Extra){customer_data[8].upper()}  "])
+(Pizza){customer_data[7].upper()}"])
+    printing_table.add_row([f"\nAdditional Toppings: \
+{customer_data[8].upper()}"])
     printing_table.add_row([f"\nPrice: £{customer_data[9]}"])
     printing_table.add_row([f"\n\nThank you for ordering with \
 Loving Pizza {customer_name.first} {customer_name.surname}.\
