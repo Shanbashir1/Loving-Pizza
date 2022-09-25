@@ -26,11 +26,16 @@ The owners who have been operating the pizza shop for some time now, realise tha
 
 
 ## Features 
-### Api - Worksheet CSV
+### API - Worksheet CSV
 + Linking my worksheet to my program 
 + Data to be added and tranferred from the worksheet, once the user has selected its choice. 
 + User information stored into the worksheet 
+#### Information collected from the worksheet
+<img src="/readme-images/love-pizza.png" alt = "Loving Pizza Data sheet" style="height: 500px; width: 700px;">
 
+#### Data sent back to the worksheet and stored a customer order sheet
+<img src="/readme-images/order-info1.png" alt = "Customer order info" style="height: 500px; width: 700px;">
+<img src="/readme-images/order-info2.png" alt = "Customer order info" style="height: 500px; width: 700px;">
 
 ### Art - Header 
 + The user is introduced to the ordering system with the text "Welcome to Loving Pizza"
@@ -75,40 +80,46 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + The pizza are listed between 1 to 6 and the user is requested to select them based on their preference. 
 + Once selected the user will be displayed the following "The pizza you chose: (answer)"
 + if a value which is not between 1 & 6 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed.
-+ <img src="/readme-images/pizza-option.png" alt = "Enter Pizza Type" style="height: 500px; width: 700px;"
++ <img src="/readme-images/pizza-option.png" alt = "Enter Pizza Type" style="height: 500px; width: 700px;">
 
 ### Additional Toppings 
 + The additional toppings gives the user a list of toppings they would like to add to their order. 
 + The toppings are listed between 1 to 6 and the user is requested to select them based on their preference. 
 + Once selected the user will be displayed the following "Additonal Toppings added: (answer)"
 + if a value which is not between 1 & 6 has been selected then the user will be requested to re-enter the value. A error message in the color format red will be displayed.
-+ <img src="/readme-images/topping-option.png" alt = "Enter any additional topping" style="height: 500px; width: 600px;"
++ <img src="/readme-images/topping-option.png" alt = "Enter any additional topping" style="height: 500px; width: 700px;">
 
 ### Calculate Price 
 + The user will be displayed a calculating price, the price will be from the pizza sizes. 
 + The user will be made aware of the pizza cost. 
-+ <img src="/readme-images/calculate-option.png" alt = "Calculating Price" style="height: 300px; width: 500px;"
++ <img src="/readme-images/calculate-option.png" alt = "Calculating Price" style="height: 500px; width: 700px;">
 
 ### Printing Receipt 
 + The user will be in receipt of a order confirmation 
 + Date, Time, Customer Name, address, Pizza details and cost will all be displayed on the receipt
 + A transaction id number is entered randomly with every order, this order can be checked with each order and is a unique feature for the user.
 + A "Thank you" message will be displayed on the receipt. 
-+ <img src="/readme-images/receipt-option.png" alt = "Prints receiept" style="height: 500px; width: 500px;"
++ <img src="/readme-images/receipt-option.png" alt = "Prints receiept" style="height: 500px; width: 700px;">
 
 ### Exiting Option 
 + System prints receipt, gives a user a thank you message and exits terminal 
-+ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 300px; width: 300px;"
++ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 400px; width: 700px;">
 
 ## Future Features 
+The project could benefit from a vast ranage of features which could be implemented for future use. I have highlighted some of the proposed features below;
 + Login & Register, a option which I was intrested in adapting into my project. However I felt I spent to much time in actually creating the ordering system that I overlooked this facility. Obviously with more time and better organising this facility was a must. The user also gets a secure and better security when ordering. 
 + Card payment facility - a must option with any type of ordering process. However a facility which have not covered yet, so hence I did not add any payment facility. 
 + A order tracking facility would be good for the shop to introduce so the user can determine the progress of its order. 
++ Uploaded to HTML & CSS - for a better design and look. 
 
  ## Color Scheme
 + As my design was not imported to any HTML and CSS, the only color facility which was used was  the color of text display, this was mainly blue or white, with error messages being displayed in red. 
 + The color format was imported from coloroma and then used using the Fore: (BLUE) option depending on what color feature was required. 
 + I tried to keep the text color consistent throughout the project. 
++ The question text color was Blue.
++ The input data text color was White.
++ Error and unvalid commands was Red.
++ Information text were in Green.
 
 ## Font Display
 + Standard fonts were used throughout the project. 
@@ -135,9 +146,10 @@ For my thrid project Python I the following technologies were used to complete m
 
 ## Testing - Python
 + PEP8 online check - A online free aplication which check python code for errors and warnings. 
++ So with my initial checks I had quite a few errors, mainly the E501 error code, prompting me that the line lenght was too big, I had to do lots of research to determine how I could break down these lines without effecting my code. I managed to find out and used the \ to break down the code. I was discovered I could use () parethesis to wrap the code. 
 + The errors and warning were rectified before deploying my projects  
 + My final online check code returned back with no errors or warnings. 
-<img src="">
+<img src="/readme-images/pep_8.png" alt = "Pep8 Online Check" style="height: 600px; width: 800px;">
 
 
 ## Test Cases
