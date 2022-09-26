@@ -16,7 +16,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + As I continued creating my design on the worksheets, i linked all my data sheets to my program. 
 + In the process I started to code which diverted me off the login design. I had to make alot of changes, the coding did not always give me the outcome i expected, and I had to go searching for answers via tutor support and the internet. 
 + After linking my design I decided to create a chart on Lucida chart to get a overall structure of my project. 
-<img src="/readme-images/lucida.pdf" alt = "Lucida Chart" style="height: 500px; width: 700px;">
+<img src="/readme-images/lucid.png" alt = "Lucida Chart" style="height: 500px; width: 700px;">
 
  
 ## User Stories
@@ -45,7 +45,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 
 #### Data sent back to the worksheet and stored a customer order sheet
 <img src="/readme-images/order-info1.png" alt = "Customer order info" style="height: 500px; width: 700px;">
-<img src="/readme-images/order-info2.png" alt = "Customer order info" style="height: 500px; width: 700px;">
+<img src="/readme-images/order-info2.png" alt = "Customer order info" style="height: 300px; width: 500px;">
 
 ### Art - Header 
 + The user is introduced to the ordering system with the text "Welcome to Loving Pizza"
@@ -113,7 +113,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 
 ### Exiting Option 
 + System prints receipt, gives a user a thank you message and exits terminal 
-+ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 200px; width: 400px;">
++ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 100px; width: 200px;">
 
 ## Future Features 
 The project could benefit from a vast ranage of features which could be implemented for future use. I have highlighted some of the proposed features below;
@@ -138,7 +138,7 @@ The project could benefit from a vast ranage of features which could be implemen
 ## Technology Used
 For my thrid project Python I the following technologies were used to complete my 
 ### Languages Used 
-1. **Python** was used the main programming language used for my project. It was widley used throughout my project. 
+1. **Python** was used as the main programming language for my project. It was widley used throughout my project. 
 ### Hosting Service
 **GITHUB** was used to create, host the web design on to the platform. The benefit of github was to create repositories, branches, commits, and pull requests. Github was also a great way to share your design to mentors and other colleagues and tutors to help view your code and seek further input and support.
 ### IDE
@@ -162,7 +162,7 @@ For my thrid project Python I the following technologies were used to complete m
 <img src="/readme-images/pep_8.png" alt = "Pep8 Online Check" style="height: 600px; width: 800px;">
 
 
-## Test Cases
+## Manual Test Cases
 1. **Introduction Header to the Loving Pizza** The user starts the program with a "Welcome to Loving Pizza" message, which is displayed using a special art format. 
 
 
@@ -197,9 +197,34 @@ For my thrid project Python I the following technologies were used to complete m
 There was no unfixed bugs by the time this was written.
 
 ## Deployment
+The project used a wide range of technologies to deploy the project. 
+Github was usd for the version control, Gitpod was used for the development platform. 
+Heroku was used for the final production development. 
+
+### HEROKU 
+For this project we were informed to use Heroku to deploy our project. 
+The following steps are taken when deploying the project to Heroku: 
+
+1. Before creating an account, you must ensure you set up some files that Heroku will need to run the app. To do this you will need to type into the terminal the following command: 
+    ##### pip3 freeze --local > requirements.txt
+2. You will then need to save your changes by commiting and pushing your changes. 
+3. You will now need to create an account by visiting the Heroku and registering your details. Once you have registered, you will need to login again. 
+4. Click New, and select create new app.
+5. Add a name you would like to call your app. You will need to select your region (Europe or America)
+6. Click on the deploy tab and under the deployment method, choose "Github"
+7. Type and select your Github repository that you would like to use and click connect. 
+8. Go to settings, and click the Reveal Config Vars this will be on Config Vars
+9. Enter the key ports and it the value 8000, click the add button,
+10. Now click on the add build button and create your package, add Python and the NodeJS.
+11. Ensure Python package is ontop then followed by the Node Js package 
+12. Go back to deploy and select Enable Automatic Deployment
+13. Under Manual deploy section, select main. 
+14. Click deploy branch 
+15. The function will start building the site. 
+16. Once completed, usually takes a few minutes you can view your app. 
+
 ### GITHUB
 + To deploy pages to Github the following steps were taken.
-
 + Login into your GITHUB account if you do not have one, you will need to create one
 + Find Repository button and open page
 + Locate the setting button and then locate the pages button.
@@ -209,9 +234,39 @@ There was no unfixed bugs by the time this was written.
 
 ### GITPOD
 + Some useful feature and pathways to note for Gitpod are as follows open pre-design of webpage(browser) "python3 -m http.server".
-+ To save work git add .
++ To save work type - "git add ."
 + To commit git commit -m TYPE MESSAGE i.e "added image to front page"
-push your work to GITHUB repositories git push.
++ To push you work to github - "git push"
++ To import files "pip install"
++ For this project we were advised to use the Code Institue template.
++ We were also advised to pin the saved work and to retreive this by opening the workspace, rather then opening the page via github. 
+
+### Setting Up API with Google Drive Account
++ Create a new google account, try not using a business account. https://console.cloud.google.com/ 
++ Once you have registered, you will need to login again using your credentials.
++ Click on the Dashboard menu
++ Once logged in, click "projects" and then "New Projects" you will need to select a title for your project, then click "create"
++ Then select project to view your project. 
++ On the left of the page select API & SERVICES followed by libarys 
++ In the search bar enable Google drive 
++ On the Google Drive API page, we will need to click "create credentials"
++ The page will lead you to a form, were you will need to select Google API, followed by calling from "Web Server" data to be accessed "Application Data", then followed by "No, I am not". Then click "What credentials do I need?"
++ Create a service account (name this what you want)
++ Role, should be "Editor"
++ Keytype should be selected as "JSON" then click continue
++ Now Enable Google sheets, go back to libary and in the search select Google sheet API and download. 
++ Once your gitpod template has been created, from your saved documents click and drag your Json file onto your gitpod workstation. 
++ Rename this file to creds.JSON. 
++ Open creds.json and find client email and copy the email address.
++ Open the worksheet, click on the share tab and copy email address.
++ Place the creds.json file in the gitignore file so it is not visible to the public
++ At this point you should save changes by using git add. and git commit
++ You should also pin your gitpod, so you can return to this. 
++ Install your dependencies gspread and google auth by entering in the terminal 'pip3 install gspread google-auth'
++ This will then install the packages 
++ You will need to enter the following into your programme "import gspread
+from google.oauth2.service_account import Credentials"
+<img src="/readme-images/creds.png" alt = "Creds info" style="height: 400px; width: 600px;">
 
 ## Credits
 A list of my credits are below
