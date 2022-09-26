@@ -1,21 +1,22 @@
-# Project 3 - Loving Pizza - A Ordering system for a Pizza Shop to its users.
+# Project 3 - Loving Pizza - A Ordering System.
 
 ###  For my third project with Code Institue, I will a create a Pizza ordering system using PYTHON. 
 [View link to my project 3](https://loving-pizzas.herokuapp.com/)
 
 ## Introduction
-Loving Pizza is a small family run pizza shop located in the UK, London. 
-The owners who have been operating the pizza shop for some time now, realise that something is missing and that technology play's a big part of the upcoming future. The owners would like the user/customer to order its pizza using its ordering system when visiting the shop or order online via an app. The owners have asked to see a online ordering system and how data will be reverted back to the kitchen staff so they are made aware of what and who has ordered. Ideally I have tried to keep a simple basic system where the pizza shop are made aware of the customer name and address and pizza requirements. The customer is then charged for his pizza. In future the owners could look at a more detailed and advance systems which offers more services and deals. 
+Loving Pizza is a small family run pizza shop located in UK, London. 
+The owners who have been operating the pizza shop for some time now, realise that something is missing and that technology play's a big part of the upcoming future. The owners would like the user/customer to order its pizza's using its ordering system when visiting the shop or ordering online via the app. The owners have asked to see an online ordering system and how the data will be reverted back to the kitchen staff so they are made aware of what and who has ordered. Ideally I have tried to keep a simple basic system where the pizza shop are made aware of the customer name and address and pizza requirements. The customer is then charged for his pizza. In future the owners could look at a more detailed and advance systems which offers more services and deals. 
 
 <img src="/readme-images/main.png" alt = "Main Page" style="height: 500px; width: 800px;">
 
 ## Design and Planning
-+ Initially I was try to plan for a quiz game but I felt as I had done this with Javascript, I had to broaden my skills and my then plan was a ordering system. 
++ My initial plan was to create a quiz game but I felt as I had done this with Javascript, it would be a similiar approach.
 + At the time of my plan I was actually in receipt of a Pizza menu and so decided I could create a simple ordering system, which allows the user to order a pizza. 
-+ My intial design was to start off with a login screen. However I started created a format for data to be transferred from a CSV, just like the Love Sandwich project. 
-+ As I continued creating my design on the worksheets, i linked all my data sheets to my program. 
-+ In the process I started to code which diverted me off the login design. I had to make alot of changes, the coding did not always give me the outcome i expected, and I had to go searching for answers via tutor support and the internet. 
-+ After linking my design I decided to create a chart on Lucida chart to get a overall structure of my project. 
++ My intial design was to start off with a login screen. However I started creating a format for data to be transferred from a CSV, just like the Love Sandwich project. 
++ As I continued creating my design on the worksheets, I linked all my data sheets to my program. This was actually quite easy, and the result was so satisfying, because everything was working as expected first time. 
++ Initially the plan was to start with a login & register option, but as I had started to code, this diverted me off the design. I had to make alot of changes throughout my project, the coding did not always give me the outcome I expected, and I had to go searching for answers via tutor support and the internet. The Love Sandwich project was the main idea concepts and tutorials I would watch over and over again, to get ideas. 
++ Before I started to code, I sat down and decicded to create a design of my project using Lucida Chart. 
++ Even after uploading my design it want various downsizing and ammendments as I felt the options were overcrowding and into much details to be displayed on Prettytables.  
 <img src="/readme-images/lucid.png" alt = "Lucida Chart" style="height: 500px; width: 700px;">
 
  
@@ -24,8 +25,8 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + As a user I would need know what options I have for ordering, i.e Pizza Type, Pizza, Additonal Toppings, etc 
 + As a user I would need to be made aware of how many slices each size pizza contains. 
 + As a user I would need to be introduced using my name and have a welcome message 
-+ As a user I would need to have a easy user interface and a responsive process 
-+ As a user I would like to know what I have ordered and be shown a receipt of my selected items 
++ As a user I would need to have a easy user interface and a responsive process to place my order. 
++ As a user I would like to know what I have ordered and be shown a receipt of my selected items.  
 
 ## Admin Stories 
 + As a admin I will need to give the user options as to what they would like to order. 
@@ -38,14 +39,14 @@ The owners who have been operating the pizza shop for some time now, realise tha
 ## Features 
 ### API - Worksheet CSV
 + Linking my worksheet to my program 
-+ Data to be added and tranferred from the worksheet, once the user has selected its choice. 
++ Data to be added and transferred from the worksheet, once the user has selected it's choice. 
 + User information stored into the worksheet 
 #### Information collected from the worksheet
 <img src="/readme-images/love-pizza.png" alt = "Loving Pizza Data sheet" style="height: 500px; width: 700px;">
 
 #### Data sent back to the worksheet and stored a customer order sheet
 <img src="/readme-images/order-info1.png" alt = "Customer order info" style="height: 500px; width: 700px;">
-<img src="/readme-images/order-info2.png" alt = "Customer order info" style="height: 300px; width: 500px;">
+<img src="/readme-images/order-info2.png" alt = "Customer order info" style="height: 500px; width: 1000px;">
 
 ### Art - Header 
 + The user is introduced to the ordering system with the text "Welcome to Loving Pizza"
@@ -136,27 +137,29 @@ The project could benefit from a vast ranage of features which could be implemen
 + Art was used to display the headers 
 
 ## Technology Used
-For my thrid project Python I the following technologies were used to complete my 
-### Languages Used 
-1. **Python** was used as the main programming language for my project. It was widley used throughout my project. 
-### Hosting Service
-**GITHUB** was used to create, host the web design on to the platform. The benefit of github was to create repositories, branches, commits, and pull requests. Github was also a great way to share your design to mentors and other colleagues and tutors to help view your code and seek further input and support.
-### IDE
-**GITPOD** allows you to define your project's configuration in code so you can launch a prebuilt development environment with one click.(Source Google) Gitpod was used to code all my Python coding.
-### 
-**Heroku**  was used to load my project and deploy it, This was my first time deploying a on Heroku and I found it quite simple. 
 
-### Others 
-+ Pep8 Online check - used to check oevr my codes for faults and issues. 
+1. Python was used as the main programming language for my project. All coding was done using python. I did not use any other programming language for my project. 
+
+2. Github was used to create, host the web design on to the platform. The benefit of github was to create repositories, branches, commits, and pull requests. Github was also a great way to share your design to mentors and other colleagues and tutors to help view your code and seek further input and support.
+
+3. Gitpod allows you to define your project's configuration in code so you can launch a prebuilt development environment with one click.(Source Google) Gitpod was used to code all my Python coding. A template was provided by Code Institute to use for our Python project. 
+
+4. Heroku was used to load my project and deploy it, This was my first time deploying a project on Heroku and I found it to be quite a simple process. The steps provided by our course tutorials were very beneficial. 
+
+5. Pep8 Online check - used to check over my codes for Errors and Warnings. 
+
+6. Lucida Chart - used to prepare my design and carefully structure my links. 
+
+### Others  
 + Stack overflow - for help with issues. 
-+ W3Schools - assits with coding issues.
-+ Slack - support from colleagues 
++ W3Schools - assistance with coding issues, helpful to see other students having similiar concerns. 
++ Slack - support from colleagues, trully amazing support from fellow colleagues and mentors. 
 + Code Institue Tutor Support -Programming help and support. 
 
 
 ## Testing - Python
 + PEP8 online check - A online free aplication which check python code for errors and warnings. 
-+ So with my initial checks I had quite a few errors, mainly the E501 error code, prompting me that the line lenght was too big, I had to do lots of research to determine how I could break down these lines without effecting my code. I managed to find out and used the \ to break down the code. I was discovered I could use () parenthesis to wrap the code. 
++ So with my initial checks I had quite a few errors, mainly the E501 error code, prompting me that the line lenght was too big, I had to do a lot of research to determine how I could break down these lines without effecting my code. I managed to find out and used the \ to break down the code. I also discovered I could use () parenthesis to wrap the code. 
 + The errors and warning were rectified before deploying my projects  
 + My final online check code returned back with no errors or warnings. 
 <img src="/readme-images/pep_8.png" alt = "Pep8 Online Check" style="height: 600px; width: 800px;">
@@ -190,15 +193,14 @@ For my thrid project Python I the following technologies were used to complete m
 7. Exiting system, Thank you message and see you back soon. 
 
 ## Fixed Bugs
-+ After doing my initial check via Pep 8 online checker I had quite a few errors and warnings. All of minor nature and could easily be fixed, i.e spacing and sentences too long errors. Once these had been ammended my code had no faults and errors. 
-<img src = "/readme>
++ After doing my initial check via Pep 8 online checker I had quite a few errors and warnings. All of minor nature and could easily be fixed, i.e white spacing and sentences too long errors. Once these had been ammended my code returned as no faults and errors. 
 
 ## Unfixed Bugs
 There was no unfixed bugs by the time this was written.
 
 ## Deployment
 The project used a wide range of technologies to deploy the project. 
-Github was usd for the version control, Gitpod was used for the development platform. 
+Github was used for the version control, Gitpod was used for the development platform. 
 Heroku was used for the final production development. 
 
 ### HEROKU 
@@ -221,7 +223,7 @@ The following steps are taken when deploying the project to Heroku:
 13. Under Manual deploy section, select main. 
 14. Click deploy branch 
 15. The function will start building the site. 
-16. Once completed, usually takes a few minutes you can view your app. 
+16. Once completed, it usually takes a few minutes before you can view your app. 
 
 ### GITHUB
 + To deploy pages to Github the following steps were taken.
@@ -276,11 +278,12 @@ A list of my credits are below
 + Bro Code = youtube video "Python"
 + Web Dev Simplified - tips on creating apps using JavaScript 
 + Coding with Nick - Help on creating workable functions. 
-+ W3schools.com - Help with CSS coding
++ W3schools.com - Help with Python coding. 
 + stackoverflow.com - help with coding, by visiting past forums.
 + Slack - support from colleagues and mentors 
 
-
+## Problems I encountered during the Project. 
+During this project I encountered some very difficult times, were I trully felt I could not continue this project and even course. My father who was a very healthy men, fell ill and I had to care for him, this was not only hard for me but for him. I was also working during the day and I have 3 young children all under the age of 7. I had to make a daunting call to Code Institue informing them that I could not continue with the course. But they advised i should see how things progress, I did just that. Sometime in the middle of the night I would open my laptop and try to do some coding and only a few lines of code would take 3-4 hours becuase of the overhaul of stress I had. Each day I would see my project feel like a burden. But every day, I set myself tasks, I would say to myself that today, I must finish this much of my project, then the next day, even if things didnt go to plan, I would say to myself never mind lets finish this much today. By me planning daily and setting targets, I would see my work progressing and my project coming together. Finally my dad is recovering well and my project close to submission. So in life take things in small steps and if things feel like a massive burden, try to break things down and give yourself daily task. 
 ## Acknowledgement
 
 + My mentor Rohit Sharma @rohit_mentor - Great advice and support throughout my project journey, I was guided well with plenty of advise and support.
