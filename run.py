@@ -365,19 +365,22 @@ require, by entering the number?  \n" + Style.RESET_ALL).lower()
         elif topping_package == "5":
             additional_toppings = "Chicken"
 
-        if topping_package == "6":
+        elif topping_package == "6":
+            additional_toppings = None
             customer_data.append("None")
             print(Fore.GREEN + "\nYou selected to have no additional \
 toppings  \n" + Style.RESET_ALL)
-            break
-        elif topping_package:
-            customer_data.append(additional_toppings)
-            print("\nAdditional Toppings Added: \n" + additional_toppings)
             break
 
         else:
             print(Fore.RED + f'\n Must enter a number between 1 to 6')
             continue
+
+        if topping_package:
+            customer_data.append(additional_toppings)
+            print("\nAdditional Toppings Added: \n" + additional_toppings)
+            break
+
 
 
 def pizza_cost():

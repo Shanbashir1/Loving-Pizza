@@ -114,7 +114,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 
 ### Exiting Option 
 + System prints receipt, gives a user a thank you message and exits terminal 
-+ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 100px; width: 200px;">
++ <img src="/readme-images/exit-option.png" alt = "Calculating Price" style="height: 100px; width: 900px;">
 
 ## Future Features 
 The project could benefit from a vast ranage of features which could be implemented for future use. I have highlighted some of the proposed features below;
@@ -166,17 +166,34 @@ The project could benefit from a vast ranage of features which could be implemen
 
 
 ## Manual Test Cases
-1. **Introduction Header to the Loving Pizza** The user starts the program with a "Welcome to Loving Pizza" message, which is displayed using a special art format. 
+1. **Introduction Header to the Loving Pizza** 
++ The user starts the program with a "Welcome to Loving Pizza" message, which is displayed using a special art format. 
++ This loads automatically when the program runs.
++ No errors or invalid inputs at this point. 
++ <img src="/readme-images/names-option.png" alt = "Enter Name Section" style="height: 500px; width: 600px;">
 
+2. **Customer Names** 
++ The user is prompted to enter his firstname and then once entered (considering no errors or invalid inputs) the user is prompted to enter his surname, again with the same error message if input entered is invalid.
++ <img src="/readme-images/names-option.png" alt = "Enter Name Section" style="height: 500px; width: 600px;">
++ <img src="/readme-images/names-error.png" alt = "Name Error" style="height: 500px; width: 600px;">
 
-2. **Customer Names** The user is prompted to enter his firstname and then once entered (considering no errors or invalid inputs) the user is prompted to enter his surname, again with the same error message if input entered is invalid 
 3. **Address** The user will be asked to enter his address, 
++ The first prompt will be enter the house number. 
++ The second prompt will ask Address 
++ The third prompt will be enter the postcode. 
++ If any of the inputs requested are not enter in, they will receive a error message 
++ The user will need to start again and enter all the required information. 
++ <img src="/readme-images/address_error.png" alt = "Address Error" style="height: 500px; width: 600px;">
 
 4. **Progress through the ordering system** 
-+ The user will be asked to select the pizza size he/her requires. Once selected the message will return as the selected item. 
-+ The user will be asked to select the pan type he/her requires. Once selected the message will return as the selected item.
-+ The user will be asked to select the pizza he/her requires. Once selected the message will return as the selected item. 
-+ The user will be asked to select any additional toppings he/her requires. Once selected the message will return as the selected item.
++ The user will be asked to select the pizza size he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
++ The user will be asked to select the pan type he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
++ The user will be asked to select the pizza he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
++ The user will be asked to select any additional toppings he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
++ <img src="/readme-images/size_error.png" alt = "Size Error" style="height: 500px; width: 600px;">
++ <img src="/readme-images/pan_error.png" alt = "Pan Error" style="height: 500px; width: 600px;">
+
+
 
 5. **Calculating Prices** 
 + The system will calculate the price, The prices were defined according to the Pizza sizes and return the value of the customer choice.
@@ -190,7 +207,7 @@ The project could benefit from a vast ranage of features which could be implemen
 + Price 
 + Thank you message 
 
-7. Exiting system, Thank you message and see you back soon. 
+7. **Exiting system**, Thank you message and see you back soon. 
 
 ## Fixed Bugs
 + After doing my initial check via Pep 8 online checker I had quite a few errors and warnings. All of minor nature and could easily be fixed, i.e white spacing and sentences too long errors. Once these had been ammended my code returned as no faults and errors. 
@@ -283,9 +300,9 @@ A list of my credits are below
 + Slack - support from colleagues and mentors 
 
 ## Problems I encountered during the Project. 
-During this project I encountered some very difficult times, were I trully felt I could not continue this project and even course. My father who was a very healthy men, fell ill and I had to care for him, this was not only hard for me but for him. I was also working during the day and I have 3 young children all under the age of 7. I had to make a daunting call to Code Institue informing them that I could not continue with the course. But they advised i should see how things progress, I did just that. Sometime in the middle of the night I would open my laptop and try to do some coding and only a few lines of code would take 3-4 hours becuase of the overhaul of stress I had. Each day I would see my project feel like a burden. But every day, I set myself tasks, I would say to myself that today, I must finish this much of my project, then the next day, even if things didnt go to plan, I would say to myself never mind lets finish this much today. By me planning daily and setting targets, I would see my work progressing and my project coming together. Finally my dad is recovering well and my project close to submission. So in life take things in small steps and if things feel like a massive burden, try to break things down and give yourself daily task. 
-## Acknowledgement
+During this project I encountered some very difficult times, were I truly felt I could not continue this project and even course. My father who was a very healthy man, fell ill and I had to care for him, this was not only hard for me but for him also. I was also working during the day and I have 3 young children all under the age of 7. I had to make a daunting call to Code Institue informing them that I could not continue with the course. But they advised I should see how things progress, I did just that. Sometime in the middle of the night I would open my laptop and try to do some coding and only a few lines of code would take 3-4 hours because of the overhaul of stress I had. Each day I would see my project feel like a burden. But every day, I set myself tasks, I would say to myself that today, I must finish this much of my project, then the next day, even if things didnt go to plan, I would say to myself never mind lets finish this much today. By me planning daily and setting targets, I would see my work progressing and my project coming together. Finally my dad is recovering well and my project close to submission. So in life take things in small steps and if things feel like a massive burden, try to break things down and give yourself daily task. 
 
+## Acknowledgement
 + My mentor Rohit Sharma @rohit_mentor - Great advice and support throughout my project journey, I was guided well with plenty of advise and support.
 + Tutor Suport - So much help from a wide diversity of tutors. They were able to support me in good time and made me realise when things became difficult.
 + Slack - Always so much help from colleagues, the level of support is undoubtedly amazing.
