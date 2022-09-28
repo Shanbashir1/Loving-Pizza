@@ -46,7 +46,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 
 #### Data sent back to the worksheet and stored a customer order sheet
 <img src="/readme-images/order-info1.png" alt = "Customer order info" style="height: 500px; width: 700px;">
-<img src="/readme-images/order-info2.png" alt = "Customer order info" style="height: 500px; width: 1000px;">
+<img src="/readme-images/order-info2.png" alt = "Customer order info" style="height: 300px; width: 900px;">
 
 ### Art - Header 
 + The user is introduced to the ordering system with the text "Welcome to Loving Pizza"
@@ -175,28 +175,31 @@ The project could benefit from a vast ranage of features which could be implemen
 2. **Customer Names** 
 + The user is prompted to enter his firstname and then once entered (considering no errors or invalid inputs) the user is prompted to enter his surname, again with the same error message if input entered is invalid.
 + <img src="/readme-images/names-option.png" alt = "Enter Name Section" style="height: 500px; width: 600px;">
-+ <img src="/readme-images/names-error.png" alt = "Name Error" style="height: 500px; width: 600px;">
++ <img src="/readme-images/name_error.png" alt = "Name Error" style="height: 300px; width: 700px;">
 
 3. **Address** The user will be asked to enter his address, 
 + The first prompt will be enter the house number. 
 + The second prompt will ask Address 
 + The third prompt will be enter the postcode. 
-+ If any of the inputs requested are not enter in, they will receive a error message 
++ If any of the inputs requested are not entered in, they will receive an error message 
 + The user will need to start again and enter all the required information. 
-+ <img src="/readme-images/address_error.png" alt = "Address Error" style="height: 500px; width: 600px;">
++ <img src="/readme-images/address_error.png" alt = "Address Error" style="height: 300px; width: 700px;">
 
 4. **Progress through the ordering system** 
 + The user will be asked to select the pizza size he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
 + The user will be asked to select the pan type he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
 + The user will be asked to select the pizza he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
 + The user will be asked to select any additional toppings he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
-+ <img src="/readme-images/size_error.png" alt = "Size Error" style="height: 500px; width: 600px;">
-+ <img src="/readme-images/pan_error.png" alt = "Pan Error" style="height: 500px; width: 600px;">
-
++ <img src="/readme-images/size_error.png" alt = "Size Error" style="height: 300px; width: 600px;">
++ <img src="/readme-images/pan_error.png" alt = "Pan Error" style="height: 300px; width: 600px;">
++ <img src="/readme-images/pizza_error.png" alt = "Pizza Error" style="height: 300px; width: 600px;">
++ <img src="/readme-images/topping_error.png" alt = "Topping Error" style="height: 300px; width: 600px;">
 
 
 5. **Calculating Prices** 
 + The system will calculate the price, The prices were defined according to the Pizza sizes and return the value of the customer choice.
++ This should calculate the price by using the values entered into the Pizza Size function. 
++ If prices and data is entered correctly, the user will not have any errors during this process. 
 
 6. **Printing Recipt** 
 + The customer is displayed with a receipt, Every order placed a order number is present, using the random feature which calculates random numbers. 
@@ -206,11 +209,17 @@ The project could benefit from a vast ranage of features which could be implemen
 + Order details, information extracted from the customer choice inputs. 
 + Price 
 + Thank you message 
++ If all values and data are entered the receipt will be displayed an no errors should be shown during this process. 
++ <img src="/readme-images/print_error.png" alt = "Printing Receipt Error" style="height: 600px; width: 600px;">
 
 7. **Exiting system**, Thank you message and see you back soon. 
++ System will display exit and goodbye message. 
++ No errors to be displayed at this point. 
 
 ## Fixed Bugs
-+ After doing my initial check via Pep 8 online checker I had quite a few errors and warnings. All of minor nature and could easily be fixed, i.e white spacing and sentences too long errors. Once these had been ammended my code returned as no faults and errors. 
++ After doing my initial check via Pep 8 online checker I had quite a few errors and warnings. All of minor nature and could easily be fixed, i.e white spacing and sentences too long errors. Once these had been ammended my code returned as no faults and errors.
++ While doing my manual testing I noticed I had the following error message and bug in my system which had to be repaired. So what the error message was displaying was that when I entered a value above the required value for selection of the toppings, it would display this error, a problem with the actual code, which went unnoticed. I would not of known this error if I did not do my manual testing so grateful for doing this. I realised the error message and a mistake that I had made. By mmoving around some of the "If" "else" statements I was able to quickly resolve the issues and get a value printed on my receipt. 
++ <img src="/readme-images/bugs_error.png" alt = "Bugs Error" style="height: 300px; width: 600px;">
 
 ## Unfixed Bugs
 There was no unfixed bugs by the time this was written.
@@ -291,8 +300,9 @@ from google.oauth2.service_account import Credentials"
 A list of my credits are below
 
 + Code Institue Learning guide and past coding examples
-+ Love Sandwich Tutorial
++ Love Sandwich Tutorial - Often referred back to this. 
 + Bro Code = youtube video "Python"
++ Learn Python, Youtube
 + Web Dev Simplified - tips on creating apps using JavaScript 
 + Coding with Nick - Help on creating workable functions. 
 + W3schools.com - Help with Python coding. 

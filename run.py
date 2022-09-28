@@ -67,6 +67,8 @@ def main():
     calculate_price()
     print_receipt()
     start_over()
+
+
 """
 Using art format to print a Welcome Logo
 """
@@ -133,7 +135,7 @@ Please Try again." + Style.RESET_ALL)
                 customer_data.append(customer_name.postcode)
 
         except IndexError:
-                        print(f"\nWelcome to Loving Pizza {customer_name.first}, \
+            print(f"\nWelcome to Loving Pizza {customer_name.first}, \
 {customer_name.surname} ")
         break
     return customer_name.first, customer_name.surname, customer_name.house, \
@@ -382,7 +384,6 @@ toppings  \n" + Style.RESET_ALL)
             break
 
 
-
 def pizza_cost():
     """
     Method to show price using the costs from the size function.
@@ -409,7 +410,6 @@ def print_receipt():
     The receipt will return information/values back to the worksheet
     logging in customer orders.
     """
-    order_all_value = order.get_all_values()
 
     printing_table = PrettyTable()
     print("\nPrinting Receipt\n")
@@ -454,6 +454,7 @@ def start_over():
     time.sleep(3)
     print(Fore.GREEN + f'Exiting... Thank for Ordering with Loving \
 Pizza, Hope to see you back soon.' + Style.RESET_ALL)
+
 
 if __name__ == '__main__':
     main()
