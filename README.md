@@ -16,7 +16,7 @@ The owners who have been operating the pizza shop for some time now, realise tha
 + As I continued creating my design on the worksheets, I linked all my data sheets to my program. This was actually quite easy, and the result was so satisfying, because everything was working as expected first time. 
 + Initially the plan was to start with a login & register option, but as I had started to code, this diverted me off the design. I had to make alot of changes throughout my project, the coding did not always give me the outcome I expected, and I had to go searching for answers via tutor support and the internet. The Love Sandwich project was the main idea concepts and tutorials I would watch over and over again, to get ideas. 
 + Before I started to code, I sat down and decicded to create a design of my project using Lucida Chart. 
-+ Even after uploading my design it want various downsizing and ammendments as I felt the options were overcrowding and into much details to be displayed on Prettytables.  
++ Even after uploading my design it went through various changes, upgrading, downsizing and ammendments as I felt some of the options were overcrowding and into much detail. 
 <img src="/readme-images/lucid.png" alt = "Lucida Chart" style="height: 500px; width: 700px;">
 
  

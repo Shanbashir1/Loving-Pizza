@@ -1,5 +1,5 @@
 from numpy import random
-from datetime import date, time, datetime
+from datetime import date, datetime
 import time
 import gspread
 from google.oauth2.service_account import Credentials
@@ -54,7 +54,11 @@ def main():
     instruct the user what instructions are required and in
     what order.
     """
-    customer_name()
+    customer_first()
+    customer_surname()
+    customer_house()
+    customer_address()
+    customer_postcode()
     size_names()
     pizza_size()
     type_names()
@@ -77,69 +81,98 @@ time.sleep(2)
 tprint('Loving Pizza')
 
 
-def customer_name():
+def customer_first():
     """
-    Customer to enter his name and then be prompted by a Welcome message
-    The Customer name will be logged into the worksheet
-    (later in the program)
-    The customer will enter his first name
+    Customer displayed a welcome message and then prompted
+    to enter their firstname,
+    """
+    while True:
+        customer_first.name = input(Fore.BLUE + "\nWelcome to Loving Pizza! \
+Please enter your First Name: " + Style.RESET_ALL).capitalize()
+        if not customer_first.name.isalpha():
+            print(Fore.RED + f"{customer_first.name } is not a valid name. \
+Please enter a valid name" + Style.RESET_ALL)
+            continue
+        elif len(customer_first.name) <= 2 or len(customer_first.name) > 12:
+            print(Fore.RED + ("OOPS, Your name should consist of more than \
+2 and no more than 12 characters. Please Try again.") + Style.RESET_ALL)
+            continue
+        else:
+            customer_data.append(customer_first.name)
+        break
+        continue
+    return customer_first.name
+
+
+def customer_surname():
+    """
+    Customer prompted to enter their surname,
+    """
+    while True:
+        customer_surname.name = input(Fore.BLUE + "\nPlease enter your \
+Surname: " + Style.RESET_ALL).capitalize()
+        if not customer_surname.name.isalpha():
+            print(Fore.RED + f"{customer_surname.name } is not a valid name. \
+Please enter a valid name" + Style.RESET_ALL)
+            continue
+        elif len(customer_surname.name) <= 2 or \
+                len(customer_surname.name) > 12:
+            print(Fore.RED + ("OOPS, Your name should consist of more than \
+2 and no more than 12 characters. Please Try again.") + Style.RESET_ALL)
+            continue
+        else:
+            customer_data.append(customer_surname.name)
+        break
+    return customer_surname.name
+
+
+def customer_house():
+    """
+    Customer prompted to enter their house number,
     """
     while True:
         try:
-            customer_name.first = input(Fore.BLUE + "\nWelcome to Loving Pizza! Please enter your \
-First Name: " + Style.RESET_ALL).capitalize()
-            if not customer_name.first.isalpha():
-                print(Fore.RED + f"{customer_name.first } is not a valid name. Please enter \
-a valid name" + Style.RESET_ALL)
-            if len(customer_name.first) <= 2 or len(customer_name.first) > 12:
-                print(Fore.RED + ("OOPS, Your name should consist of more than"
-                      "2 and no more than 12 characters. \
-Please Try again.") + Style.RESET_ALL)
-                continue
+            customer_house.number = int(input(Fore.BLUE + "\nPlease Enter \
+Your House Number: " + Style.RESET_ALL))
+            break
+        except ValueError:
+            print(Fore.RED + "Invalid input, Please enter a valid house \
+number" + Style.RESET_ALL)
+            continue
+        else:
+            customer_data.append(customer_house.number)
+            break
+    return customer_house.number
 
-            customer_name.surname = input(Fore.BLUE + "\nPlease enter your \
-Surname: " + Style.RESET_ALL).capitalize()
-            if not customer_name.first.isalpha():
-                print(Fore.RED + f"{customer_name.first } is not a valid name. Please enter \
-a valid name" + Style.RESET_ALL)
-            elif (len(customer_name.surname) <= 2 or
-                  len(customer_name.surname) > 12):
-                print(Fore.RED + ("OOPS, Your name should consist of more than"
-                      "2 and no more than 12 characters. \
-Please Try again.") + Style.RESET_ALL)
-                continue
 
-            customer_name.house = input(Fore.BLUE + "\nPlease enter your House \
-Number: " + Style.RESET_ALL).capitalize()
-            customer_name.address = input(Fore.BLUE + "\nPlease enter your \
-Address: " + Style.RESET_ALL).capitalize()
-            customer_name.postcode = input(Fore.BLUE + "\nPlease enter your \
-Postcode: " + Style.RESET_ALL).capitalize()
-            if not customer_name.house:
-                print(Fore.RED + f"You must enter a valid house number.\
-Please Try again." + Style.RESET_ALL)
-                continue
-            if not customer_name.address:
-                print(Fore.RED + f"You must enter a valid address.\
-                     Please Try again." + Style.RESET_ALL)
-                continue
-            if not customer_name.postcode:
-                print(Fore.RED + f"You must enter a valid postcode.\
-                     Please Try again." + Style.RESET_ALL)
-                continue
-            else:
-                customer_data.append(customer_name.first)
-                customer_data.append(customer_name.surname)
-                customer_data.append(customer_name.house)
-                customer_data.append(customer_name.address)
-                customer_data.append(customer_name.postcode)
+def customer_address():
+    """
+    Customer prompted to enter their street name,
+    """
+    while True:
+        customer_address.name = input(Fore.BLUE + "\nPlease enter your \
+Address:  " + Style.RESET_ALL).capitalize()
+        if not customer_address.name.isalpha():
+            print(Fore.RED + f"{customer_address.name} is not a valid Address.\
+Please enter a valid Address" + Style.RESET_ALL)
+            continue
+        else:
+            customer_data.append(customer_address.name)
+            break
+    return customer_address.name
 
-        except IndexError:
-            print(f"\nWelcome to Loving Pizza {customer_name.first}, \
-{customer_name.surname} ")
+
+def customer_postcode():
+    """
+    Customer prompted to enter their postcode,
+    """
+    while True:
+        customer_postcode.name = input(Fore.BLUE + "\nPlease enter your \
+Postcode:  " + Style.RESET_ALL).capitalize()
+
+        customer_data.append(customer_postcode.name)
         break
-    return customer_name.first, customer_name.surname, customer_name.house, \
-        customer_name.address, customer_name.postcode
+    return customer_postcode.name
 
 
 def size_names():
@@ -175,7 +208,8 @@ def pizza_size():
     and calculated in the calculate price function.
     """
     while True:
-        pizza_size.piz = input(Fore.BLUE + "\nPlease select the size of the Pizza you require? \
+        pizza_size.piz = input(Fore.BLUE + "\nPlease select the size of \
+the Pizza you require? \
 1) Small 2) Medium 3) Large 4) Xlarge \n" + Style.RESET_ALL).lower()
         if pizza_size.piz == "1":
             customer_data.append("Small")
@@ -249,7 +283,7 @@ require your pizza to be cooked in?  \n" + Style.RESET_ALL).lower()
             break
 
         else:
-            print(Fore.RED + f'\n Must enter a number between 1 to 3')
+            print(Fore.RED + '\n Must enter a number between 1 to 3')
             continue
     return pizza_chosen
 
@@ -314,7 +348,7 @@ require, by entering the number?  \n" + Style.RESET_ALL).lower()
             break
 
         else:
-            print(Fore.RED + f'\n Must enter a number between 1 to 6')
+            print(Fore.RED + '\n Must enter a number between 1 to 6')
             continue
 
 
@@ -375,7 +409,7 @@ toppings  \n" + Style.RESET_ALL)
             break
 
         else:
-            print(Fore.RED + f'\n Must enter a number between 1 to 6')
+            print(Fore.RED + '\n Must enter a number between 1 to 6')
             continue
 
         if topping_package:
@@ -422,19 +456,19 @@ def print_receipt():
     # The Below will produce a receipt using the information on the worksheet
     printing_table.add_row([f"\nDate: {today}"])
     printing_table.add_row([f"\nTime: {dt_string}"])
-    printing_table.add_row([f"\nCustomer Name: {customer_name.first} \
-{customer_name.surname}"])
-    printing_table.add_row([f"\nDelivery Address:\n {customer_name.house} \
-{customer_name.address} {customer_name.postcode}"])
+    printing_table.add_row([f"\nCustomer Name: {customer_first.name} \
+{customer_surname.name}"])
+    printing_table.add_row([f"\nDelivery Address:\n {customer_house.number} \
+{customer_address.name.upper()} {customer_postcode.name.upper()}"])
     printing_table.add_row(["\n******* Your Order Confirmation *******"])
     printing_table.add_row([f"\nOrdered Item: (Size) \
-{customer_data[5].upper()}, (Type){customer_data[6].upper()}, \
-(Pizza){customer_data[7].upper()}"])
+{customer_data[4].upper()}, (Type){customer_data[5].upper()}, \
+(Pizza){customer_data[6].upper()}"])
     printing_table.add_row([f"\nAdditional Toppings: \
-{customer_data[8].upper()}"])
-    printing_table.add_row([f"\nPrice: £{customer_data[9]}"])
+{customer_data[7]}"])
+    printing_table.add_row([f"\nPrice: £{customer_data[8]}"])
     printing_table.add_row([f"\n\nThank you for ordering with \
-Loving Pizza {customer_name.first} {customer_name.surname}.\
+Loving Pizza {customer_first.name} {customer_surname.name}.\
  \nYour order is on its way to you."])
     print(printing_table)
 
@@ -452,7 +486,7 @@ def start_over():
     the ordering process if re-ordering
     """
     time.sleep(3)
-    print(Fore.GREEN + f'Exiting... Thank for Ordering with Loving \
+    print(Fore.GREEN + 'Exiting... Thank for Ordering with Loving \
 Pizza, Hope to see you back soon.' + Style.RESET_ALL)
 
 
