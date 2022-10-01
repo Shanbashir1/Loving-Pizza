@@ -178,12 +178,14 @@ The project could benefit from a vast ranage of features which could be implemen
 + <img src="/readme-images/name_error.png" alt = "Name Error" style="height: 300px; width: 700px;">
 
 3. **Address** The user will be asked to enter his address, 
-+ The first prompt will be enter the house number. 
++ The first prompt will be enter the house number. This must be a number(Integer) and no characters(strings) to be entered, otherwise this will prompt a error.  
 + The second prompt will ask Address 
 + The third prompt will be enter the postcode. 
 + If any of the inputs requested are not entered in, they will receive an error message 
-+ The user will need to start again and enter all the required information. 
++ At any point any inputs are entered incorrectly, or not inline with the character requirements, the user will be requested to reenter the information or values. 
++ <img src="/readme-images/house_error.png" alt = "House Error" style="height: 300px; width: 700px;">
 + <img src="/readme-images/address_error.png" alt = "Address Error" style="height: 300px; width: 700px;">
+
 
 4. **Progress through the ordering system** 
 + The user will be asked to select the pizza size he/her requires. Once selected the message will return as the selected item. Error message will be displayed if a input value is entered which is not listed. 
@@ -220,6 +222,13 @@ The project could benefit from a vast ranage of features which could be implemen
 + After doing my initial check via Pep 8 online checker I had quite a few errors and warnings. All of minor nature and could easily be fixed, i.e white spacing and sentences too long errors. Once these had been ammended my code returned as no faults and errors.
 + While doing my manual testing I noticed I had the following error message and bug in my system which had to be repaired. So what the error message was displaying was that when I entered a value above the required value for selection of the toppings, it would display this error, a problem with the actual code, which went unnoticed. I would not of known this error if I did not do my manual testing so grateful for doing this. I realised the error message and a mistake that I had made. By mmoving around some of the "If" "else" statements I was able to quickly resolve the issues and get a value printed on my receipt. 
 + <img src="/readme-images/bugs_error.png" alt = "Bugs Error" style="height: 300px; width: 600px;">
+
++ Gitpod Problem - The gitpod problem I beleive is implemented with the Pep8 check, despite having cleared all issues and errors with Pep8. I discovered Pep8 Online checker website has got some problems and the site was no longer active. For safety and precautions, I was advised to do the checks on my gitpod, I cleared all the faults and warnings. The check revealed no further errors. 
++ <img src="/readme-images/gitpod_error.png" alt = "Gitpod Error" style="height: 300px; width: 600px;">
+
++ For the list of Pizza I was having issues when deploying it onto Heroku, that the columns were not fitting onto the page and were overlapping. This was the only section that was playing up. I read alot on how to change designs on Prettytables so the columns fit nicely. I eventually had to adjust the index.html file to change the script to 100 columns so that the page displayed the list correctly. 
++ <img src="/readme-images/index_bugs.png" alt = "Heroku display issue" style="height: 300px; width: 600px;">
+
 
 ## Unfixed Bugs
 There was no unfixed bugs by the time this was written.
