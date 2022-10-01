@@ -151,7 +151,7 @@ def customer_address():
     """
     while True:
         customer_address.name = input(Fore.BLUE + "\nPlease enter your \
-Address:  " + Style.RESET_ALL).capitalize()
+road/street name only:  " + Style.RESET_ALL).capitalize()
         if not customer_address.name.isalpha():
             print(Fore.RED + f"{customer_address.name} is not a valid Address.\
 Please enter a valid Address" + Style.RESET_ALL)
@@ -173,6 +173,8 @@ Postcode:  " + Style.RESET_ALL).capitalize()
         customer_data.append(customer_postcode.name)
         break
     return customer_postcode.name
+# No error or invalid inputs due to the postcode having Strings and Integers
+# The length is also uncertain in areas so avoided error inputs for postcode.
 
 
 def size_names():
