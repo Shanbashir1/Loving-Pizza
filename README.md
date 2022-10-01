@@ -164,6 +164,9 @@ The project could benefit from a vast ranage of features which could be implemen
 + My final online check code returned back with no errors or warnings. 
 <img src="/readme-images/pep_8.png" alt = "Pep8 Online Check" style="height: 600px; width: 800px;">
 
++ Gitpod Problems Check - The gitpod problem I beleive is implemented with the Pep8 check, despite having cleared all issues and errors with Pep8. I discovered Pep8 Online checker website has got some problems and the site was no longer active. For safety and precautions, I was advised to do the checks on my gitpod, I cleared all the faults and warnings. The check revealed no further errors. 
++ <img src="/readme-images/gitpod.errors.png" alt = "Gitpod Error" style="height: 300px; width: 600px;">
+
 
 ## Manual Test Cases
 1. **Introduction Header to the Loving Pizza** 
@@ -223,8 +226,8 @@ The project could benefit from a vast ranage of features which could be implemen
 + While doing my manual testing I noticed I had the following error message and bug in my system which had to be repaired. So what the error message was displaying was that when I entered a value above the required value for selection of the toppings, it would display this error, a problem with the actual code, which went unnoticed. I would not of known this error if I did not do my manual testing so grateful for doing this. I realised the error message and a mistake that I had made. By mmoving around some of the "If" "else" statements I was able to quickly resolve the issues and get a value printed on my receipt. 
 + <img src="/readme-images/bugs_error.png" alt = "Bugs Error" style="height: 300px; width: 600px;">
 
-+ Gitpod Problem - The gitpod problem I beleive is implemented with the Pep8 check, despite having cleared all issues and errors with Pep8. I discovered Pep8 Online checker website has got some problems and the site was no longer active. For safety and precautions, I was advised to do the checks on my gitpod, I cleared all the faults and warnings. The check revealed no further errors. 
-+ <img src="/readme-images/gitpod_errors.png" alt = "Gitpod Error" style="height: 300px; width: 600px;">
++ Gitpod Problems Check - The gitpod problem I beleive is implemented with the Pep8 check, despite having cleared all issues and errors with Pep8. I discovered Pep8 Online checker website has got some problems and the site was no longer active. For safety and precautions, I was advised to do the checks on my gitpod, I cleared all the faults and warnings. The check revealed no further errors. 
++ <img src="/readme-images/gitpod.errors.png" alt = "Gitpod Error" style="height: 300px; width: 600px;">
 
 + For the list of Pizza I was having issues when deploying it onto Heroku, that the columns were not fitting onto the page and were overlapping. This was the only section that was playing up. I read alot on how to change designs on Prettytables so the columns fit nicely. I eventually had to adjust the index.html file to change the script to 100 columns so that the page displayed the list correctly. 
 + <img src="/readme-images/index_bugs.png" alt = "Heroku display issue" style="height: 300px; width: 600px;">
